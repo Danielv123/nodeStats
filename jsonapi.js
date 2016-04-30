@@ -1,5 +1,5 @@
 var http = require('http');
-var PORT = 13370;
+var PORT = 80;
 
 function handleRequest(request, response){
 	x = require('url').parse(request.url, true)
@@ -19,6 +19,8 @@ function handleRequest(request, response){
 	} else if (x.pathname == '/health') {
 		response.writeHead(200);
 		response.end('Server online');
+	} else {
+		response.end('Hellow world!');
 	}
 }
 
