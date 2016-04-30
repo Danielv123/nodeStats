@@ -1,4 +1,5 @@
 var http = require('http');
+var PORT = 3000;
 
 function handleRequest(request, response){
 	x = require('url').parse(request.url, true)
@@ -26,6 +27,6 @@ function requestLog(custom) {
 }
 
 var server = http.createServer(handleRequest);
-server.listen(3000, function(){
+server.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
