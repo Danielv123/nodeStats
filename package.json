@@ -1,7 +1,12 @@
-
-
-"scripts": {
-  "start": "jsonapi.js"
-},
-"main": "jsonapi.js"
-
+{
+  "name": "apiserver",
+  "version": "1.0.1",
+  "description": "Simple api server",
+  "private": true,
+  "main": "jsonapi.js",
+  "scripts": {
+    "start": "node jsonapi.js"
+  },
+  "author": "Danielv123",
+  "license": "ISC"
+}

@@ -15,10 +15,13 @@ function handleRequest(request, response){
 		resp.minute = date.getMinutes();
 		resp.second = date.getSeconds();
 		response.end(JSON.stringify(resp));
+	} else if (x.pathname == '/health') {
+		response.writeHead(200);
+		response.end();
 	}
 }
 
 var server = http.createServer(handleRequest);
-server.listen(8080, function(){
+server.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
