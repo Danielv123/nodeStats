@@ -1,5 +1,5 @@
 var http = require('http');
-var PORT = 80;
+var PORT = 8080;
 
 function handleRequest(request, response){
 	x = require('url').parse(request.url, true)
