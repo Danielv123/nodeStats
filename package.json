@@ -1,0 +1,7 @@
+
+
+"scripts": {
+  "start": "jsonapi.js"
+},
+"main": "jsonapi.js"
+
