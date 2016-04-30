@@ -8,6 +8,7 @@ function handleRequest(request, response){
 		resp = {};
 		resp.unixtime = date.getTime()
 		response.end(JSON.stringify(resp));
+		requestLog();
 	} else if (x.pathname == '/api/parsetime') {
 		date = new Date(x.query.iso);
 		resp = {};
@@ -15,10 +16,16 @@ function handleRequest(request, response){
 		resp.minute = date.getMinutes();
 		resp.second = date.getSeconds();
 		response.end(JSON.stringify(resp));
+		requestLog();
 	} else if (x.pathname == '/health') {
 		response.writeHead(200);
-		response.end();
+		response.end('Server online');
+		requestLog();
 	}
+}
+
+function requestLog(custom) {
+	console.log('Connection: ' + x.pathname + custom);
 }
 
 var server = http.createServer(handleRequest);
